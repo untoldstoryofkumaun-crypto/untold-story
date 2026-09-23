@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Untold Stories: Voices from the Himalayas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1F1C;
+    --pine:#2F4030;
+    --stone:#7C7466;
+    --copper:#B5652C;
+    --parchment:#F3EDE2;
+    --mist:#E7E2D5;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;margin:0;padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{background:var(--parchment);color:var(--ink);font-family:'Work Sans',Arial,sans-serif;line-height:1.6;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+  header.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;max-width:900px;margin:0 auto;font-size:14px;color:var(--pine);flex-wrap:wrap;gap:10px;}
+  header.nav .mark{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--ink);}
+  header.nav nav a{color:var(--pine);text-decoration:none;margin-left:18px;font-size:13.5px;}
+  header.nav nav a:hover{text-decoration:underline;}
+
+  .hero{padding:48px 0 40px;}
+  .hero h1{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(36px,6vw,60px);line-height:1.08;max-width:11ch;}
+  .hero .lede{margin-top:20px;max-width:54ch;font-size:18px;color:var(--stone);}
+  .hero .lede em{font-style:italic;color:var(--copper);}
+  .ridge{display:block;width:100%;height:170px;margin-top:38px;}
+
+  section{padding:56px 0;}
+  section.alt{background:var(--mist);}
+  .eyebrow{font-size:14px;color:var(--copper);margin-bottom:10px;}
+  h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(25px,4vw,32px);max-width:20ch;color:var(--pine);margin-bottom:20px;}
+  .col{max-width:660px;}
+  .col p{margin-bottom:15px;font-size:16px;}
+  .col p:last-child{margin-bottom:0;}
+
+  .rowlist{display:flex;flex-direction:column;}
+  .row{padding:24px 0;border-top:1px solid rgba(47,64,48,.22);display:grid;grid-template-columns:36px 190px 1fr;align-items:start;gap:18px;}
+  .row:last-child{border-bottom:1px solid rgba(47,64,48,.22);}
+  .row-icon{width:30px;height:30px;margin-top:2px;flex-shrink:0;}
+  .row .name{font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--pine);}
+  .row p{font-size:15px;color:var(--ink);}
+  @media (max-width:640px){
+    .row{grid-template-columns:30px 1fr;gap:5px 14px;}
+    .row .name{grid-column:2;}
+    .row p{grid-column:2;}
+  }
+
+  .simplerow{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-top:1px solid rgba(47,64,48,.22);gap:20px;}
+  .simplerow:last-child{border-bottom:1px solid rgba(47,64,48,.22);}
+  .simplerow .label{font-size:16px;}
+  .simplerow .note{font-size:13.5px;color:var(--stone);text-align:right;max-width:44ch;}
+  @media (max-width:640px){.simplerow{flex-direction:column;gap:4px;}.simplerow .note{text-align:left;}}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  @media (max-width:700px){.two-col{grid-template-columns:1fr;gap:30px;}}
+  .two-col h3{font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:20px;color:var(--pine);margin-bottom:10px;}
+  .two-col p{font-size:15.5px;}
+
+  .callout-list{margin-top:20px;}
+  .callout-list li{list-style:none;padding:10px 0 10px 22px;position:relative;font-size:16px;}
+  .callout-list li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:8px;background:var(--copper);border-radius:50%;}
+
+  footer{background:var(--pine);color:var(--parchment);padding:50px 0 38px;}
+  footer .wrap{display:flex;flex-direction:column;gap:16px;}
+  footer h3{font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:25px;}
+  footer a{color:var(--parchment);}
+  footer .fine{font-size:12.5px;color:#C9D0C5;margin-top:22px;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .hero h1{animation:rise .7s ease-out both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="mark">Untold Stories</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#vision">Vision</a>
+    <a href="#activities">Activities</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="wrap hero">
+  <h1>Voices from the Himalayas</h1>
+  <p class="lede">A community-centered storytelling and cultural preservation initiative documenting the <em>unheard</em> narratives of Kumaon's mountain villages, before they fade from memory.</p>
+  <svg class="ridge" viewBox="0 0 900 240" preserveAspectRatio="xMidYMax slice" role="presentation" aria-hidden="true">
+    <circle cx="740" cy="52" r="34" fill="#B5652C" opacity="0.85"/>
+    <polygon points="0,240 0,150 140,55 260,140 360,70 460,150 470,150 470,240" fill="#DED6C4"/>
+    <polygon points="470,240 470,150 560,80 660,150 760,60 860,150 900,120 900,240" fill="#DED6C4"/>
+    <polygon points="0,240 0,190 90,110 190,190 280,130 380,200 380,240" fill="#2F4030" opacity="0.9"/>
+    <polygon points="380,240 380,200 470,140 560,200 650,120 760,200 850,150 900,190 900,240" fill="#2F4030"/>
+    <g fill="#1B1F1C" opacity="0.85">
+      <polygon points="60,215 70,180 80,215"/>
+      <polygon points="150,220 160,190 170,220"/>
+      <polygon points="600,222 610,192 620,222"/>
+      <polygon points="700,218 710,186 720,218"/>
+      <polygon points="800,224 810,196 820,224"/>
+    </g>
+  </svg>
+</div>
+
+<section id="call">
+  <div class="wrap col">
+    <div class="eyebrow">What are we looking for</div>
+    <h2>Stories that may never make a headline, but mean everything to someone</h2>
+    <ul class="callout-list">
+      <li>An old man's memories</li>
+      <li>A village that is slowly changing</li>
+      <li>A tradition that is disappearing</li>
+      <li>A woman's unheard story</li>
+      <li>A home left behind because of migration</li>
+      <li>Or simply the everyday life of people in the mountains</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap col">
+    <div class="eyebrow">How it began</div>
+    <h2>A journey that started with listening</h2>
+    <p>My name is Sachin Garkoti, and I belong to Garkot village in Champawat district of Uttarakhand. I am a fellow of the 3rd batch of the Himal Prakriti Fellowship, and have been actively involved in community work, storytelling, youth engagement, and creative documentation in rural Himalayan regions.</p>
+    <p>I strongly believe that meaningful social change begins with change within ourselves. With this belief, I started engaging with villages and local communities to understand their realities, stories, struggles, and cultural experiences more closely. During this journey, I realized that many stories from our mountains remain unheard and undocumented — stories connected to migration, disappearing traditions, oral histories, women's experiences, local wisdom, cultural identity, and the everyday realities of village life.</p>
+    <p>This realization became the foundation of <strong>Untold Stories of Kumaon: Voices from the Himalayas</strong> — an effort to document and preserve the voices and realities of Himalayan communities through photography, visual storytelling, oral histories, written narratives, and creative documentation, so that local culture and human experience can reach future generations.</p>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="wrap">
+    <div class="eyebrow">Why this project exists</div>
+    <h2>Vision &amp; mission</h2>
+    <div class="two-col">
+      <div>
+        <h3>Vision</h3>
+        <p>To preserve the voices, memories, culture, and realities of Himalayan communities through stories and photographs — and to build awareness, dialogue, and deeper connections between people, culture, and future generations.</p>
+      </div>
+      <div>
+        <h3>Mission</h3>
+        <p>To document untold stories and changing realities of mountain communities through storytelling and photography, preserving cultural heritage, highlighting unheard voices, and encouraging dialogue and community connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="goals">
+  <div class="wrap">
+    <div class="eyebrow">What we're working toward</div>
+    <h2>Objectives &amp; goals</h2>
+    <div class="rowlist">
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="16" r="6" fill="none" stroke="#B5652C" stroke-width="2"/><circle cx="27" cy="18" r="5" fill="none" stroke="#B5652C" stroke-width="2"/><path d="M6 30 C6 24, 22 24, 22 30" fill="none" stroke="#B5652C" stroke-width="2"/><path d="M22 29 C22 25, 33 25, 33 29" fill="none" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Community empowerment &amp; awareness</div>
+        <p>Strengthen rural communities by documenting local realities, amplifying community voices, and creating awareness around issues that matter to the village.</p>
+      </div>
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="9" y="7" width="22" height="27" rx="1.5" fill="none" stroke="#B5652C" stroke-width="2"/><line x1="14" y1="15" x2="26" y2="15" stroke="#B5652C" stroke-width="2"/><line x1="14" y1="21" x2="26" y2="21" stroke="#B5652C" stroke-width="2"/><line x1="14" y1="27" x2="22" y2="27" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Preservation of culture &amp; heritage</div>
+        <p>Protect and document the stories, traditions, and knowledge of the community so they remain alive for future generations.</p>
+      </div>
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 8 L20 28" stroke="#B5652C" stroke-width="2"/><path d="M12 12 L20 8 L28 12" fill="none" stroke="#B5652C" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="32" r="3" fill="none" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Growth through creative storytelling</div>
+        <p>Use photography and storytelling as tools for personal learning, creative expression, and building meaningful social impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="wrap">
+    <div class="eyebrow">Proposed activity</div>
+    <h2>How the documentation happens</h2>
+    <div class="rowlist">
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 30 C10 18, 30 18, 34 30" fill="none" stroke="#B5652C" stroke-width="2"/><circle cx="20" cy="14" r="5" fill="none" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Community story collection &amp; oral histories</div>
+        <p>Document untold stories, lived experiences, and local knowledge through field visits and conversations with community members.</p>
+      </div>
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="13" width="28" height="18" rx="2" fill="none" stroke="#B5652C" stroke-width="2"/><circle cx="20" cy="22" r="6" fill="none" stroke="#B5652C" stroke-width="2"/><rect x="15" y="9" width="8" height="4" fill="none" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Photography &amp; cultural documentation</div>
+        <p>Capture visual stories on village life, migration, traditions, and social realities through photography.</p>
+      </div>
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="4" fill="none" stroke="#B5652C" stroke-width="2"/><circle cx="26" cy="14" r="4" fill="none" stroke="#B5652C" stroke-width="2"/><path d="M6 31 C6 24, 22 24, 22 31" fill="none" stroke="#B5652C" stroke-width="2"/><path d="M18 31 C18 24, 34 24, 34 31" fill="none" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Youth &amp; community storytelling engagement</div>
+        <p>Facilitate storytelling spaces and involve youth and local people in sharing and shaping their own narratives.</p>
+      </div>
+      <div class="row">
+        <svg class="row-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="9" width="24" height="22" rx="2" fill="none" stroke="#B5652C" stroke-width="2"/><line x1="8" y1="16" x2="32" y2="16" stroke="#B5652C" stroke-width="2"/><line x1="14" y1="22" x2="26" y2="22" stroke="#B5652C" stroke-width="2"/></svg>
+        <div class="name">Digital archiving &amp; public story sharing</div>
+        <p>Create an archive of stories and share selected narratives through public platforms to raise awareness and preserve heritage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="timeline">
+  <div class="wrap col">
+    <div class="eyebrow">Project timeline</div>
+    <h2>October 2026 &mdash; March 2028</h2>
+    <div class="rowlist" style="margin-top:8px;">
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Oct &ndash; Dec 2026</div>
+        <p>Field visits and community mapping in selected villages; building relationships and identifying stories and participants; initial documentation of oral histories and photo narratives.</p>
+      </div>
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Jan &ndash; Mar 2027</div>
+        <p>Continued story collection and photography; documentation of cultural practices, migration stories, and local voices; storytelling circles with youth and elders.</p>
+      </div>
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Apr &ndash; Jun 2027</div>
+        <p>Curation and organization of collected stories and visual materials; development of a digital archive and thematic photo stories; sharing initial stories through online/public platforms.</p>
+      </div>
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Jul &ndash; Sep 2027</div>
+        <p>Further field documentation with a deeper focus on social-issue stories; community engagement activities and youth participation; expansion of the archive and outreach.</p>
+      </div>
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Oct &ndash; Dec 2027</div>
+        <p>Public sharing of curated stories through exhibitions and storytelling forums; reflection with communities and feedback collection; strengthening documentation of cultural heritage.</p>
+      </div>
+      <div class="row" style="grid-template-columns:190px 1fr;">
+        <div class="name">Jan &ndash; Mar 2028</div>
+        <p>Final documentation phase and compilation of stories; review of project outcomes and impact; preparing to sustain and expand Untold Stories as a long-term platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap col">
+    <div class="eyebrow">Who's behind it</div>
+    <h2>Team</h2>
+    <div class="rowlist">
+      <div class="simplerow"><span class="label">Project Lead / Storyteller</span><span class="note">Sachin Garkoti &mdash; coordination, field documentation, photography, story collection</span></div>
+      <div class="simplerow"><span class="label">Community Resource Persons</span><span class="note">Local members supporting story identification and outreach</span></div>
+      <div class="simplerow"><span class="label">Youth Volunteers</span><span class="note">Support in documentation and storytelling activities</span></div>
+      <div class="simplerow"><span class="label">Creative / Technical Support</span><span class="note">Photo curation, digital archiving, and communication as needed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="support">
+  <div class="wrap col">
+    <div class="eyebrow">Get involved</div>
+    <h2>How your support helps</h2>
+    <p>This project runs on community support and small grants. Contributions go toward:</p>
+    <div class="rowlist" style="margin-top:6px;">
+      <div class="simplerow"><span class="label">Travel &amp; field visits</span><span class="note">Transportation for village visits and documentation journeys</span></div>
+      <div class="simplerow"><span class="label">Documentation &amp; equipment</span><span class="note">Photography materials, storage devices, recording tools</span></div>
+      <div class="simplerow"><span class="label">Community activities</span><span class="note">Storytelling circles, community meetings, local engagement</span></div>
+      <div class="simplerow"><span class="label">Digital archiving</span><span class="note">Data storage, internet, content sharing &amp; outreach</span></div>
+      <div class="simplerow"><span class="label">Coordination &amp; overheads</span><span class="note">Administration, communication, and contingency costs</span></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h3>Share a story, or support the work</h3>
+    <p>Write to us at <a href="mailto:hello@rangkaarwaan.org">hello@rangkaarwaan.org</a> — replace with your real address.</p>
+    <div class="fine">Untold Stories of Kumaon: Voices from the Himalayas — led by Sachin Garkoti, Garkot village, Champawat, Uttarakhand.</div>
+  </div>
+</footer>
+
+</body>
+</html>
